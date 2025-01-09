@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv">
+    <p>This paragraph is inside a div.</p>
+  </div>
+  <script>
+    // Incorrect way to select the inner paragraph
+    const paragraph = document.getElementById('myDiv').textContent;
+    console.log(paragraph); // Outputs the text content of the div, not the inner paragraph
+    
+    //Correct way to select the inner paragraph
+    const paragraph2 = document.querySelector('#myDiv > p');
+    console.log(paragraph2.textContent); //Outputs the inner paragraph correctly
+  </script>
+</body>
+</html>
